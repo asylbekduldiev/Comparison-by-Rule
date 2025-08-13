@@ -1,0 +1,10 @@
+{
+  "name": "diploma-checker-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/diploma-checker-e2e/src",
+  "tags": [],
+  "implicitDependencies": ["diploma-checker"],
+  "// targets": "to see all targets run: nx show project diploma-checker-e2e --web",
+  "targets": {}
+}
