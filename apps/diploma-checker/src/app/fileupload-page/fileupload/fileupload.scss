@@ -1,0 +1,54 @@
+.upload-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh;
+  background-color: #1e1e1e;
+}
+
+.upload-box {
+  width: 500px;
+  padding: 2rem;
+  border: 2px dashed #666;
+  border-radius: 12px;
+  text-align: center;
+  background-color: #2c2c2c;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+
+  &.drag-over {
+    border-color: #4cafef;
+    background-color: #333;
+  }
+
+  .icon {
+    font-size: 48px;
+    margin-bottom: 1rem;
+    color: #4cafef;
+  }
+
+  .title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+  }
+
+  .subtitle {
+    color: #aaa;
+
+    .link {
+      background: none;
+      border: none;
+      padding: 0;
+      color: #4cafef;
+      cursor: pointer;
+      text-decoration: underline;
+      font: inherit;
+    }
+  }
+
+  .formats {
+    margin-top: 1rem;
+    font-size: 0.85rem;
+    color: #777;
+  }
+}

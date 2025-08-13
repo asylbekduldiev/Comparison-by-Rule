@@ -18,6 +18,11 @@
     "sharedGlobals": ["{workspaceRoot}/.github/workflows/ci.yml"]
   },
   "nxCloudId": "689cbf5335926c7bd30ff769",
+  "projects": {
+    "diploma-checker": "apps/diploma-checker",
+    "diploma-checker-e2e": "apps/diploma-checker-e2e",
+    "diploma-checker-backend": "apps/diploma-checker-backend"
+  },
   "targetDefaults": {
     "@angular/build:application": {
       "cache": true,

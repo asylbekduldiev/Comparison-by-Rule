@@ -1,8 +1,8 @@
 export default {
-  displayName: 'diploma-checker',
+  displayName: 'diploma-checker-backend-checker',
   preset: '../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
-  coverageDirectory: '../../coverage/apps/diploma-checker',
+  coverageDirectory: '../../coverage/apps/diploma-checker-backend-checker',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': [
       'jest-preset-angular',

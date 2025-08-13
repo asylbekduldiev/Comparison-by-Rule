@@ -1,0 +1,18 @@
+<div class="upload-container"
+     (drop)="onDrop($event)"
+     (dragover)="onDragOver($event)"
+     (dragleave)="onDragLeave($event)">
+
+  <div class="upload-box" [class.drag-over]="isDragOver">
+    <div class="icon">⬆</div>
+    <p class="title">Upload PDF</p>
+    <p class="subtitle">Drag and drop or <button type="button" class="link" (click)="fileInput.click()">choose file</button> to upload</p>
+    <input type="file"
+           accept="application/pdf"
+           hidden
+           #fileInput
+           (change)="onFileSelected($event)" />
+    <p class="formats">Supported file type: PDF</p>
+  </div>
+
+</div>

@@ -1,0 +1,20 @@
+{
+  "name": "diploma-checker-backend",
+  "root": "apps/diploma-checker-backend",
+  "targets": {
+    "serve": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "./mvnw spring-boot:run",
+        "cwd": "apps/diploma-checker-backend"
+      }
+    },
+    "build": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "./mvnw clean package",
+        "cwd": "apps/diploma-checker-backend"
+      }
+    }
+  }
+}
