@@ -1,12 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { HttpClient, provideHttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-fileupload',
   imports: [],
   templateUrl: './fileupload.html',
-  styleUrl: './fileupload.scss'
+  styleUrl: './fileupload.scss',
+  standalone: true,
 })
 export class Fileupload {
+  http = inject(HttpClient)
   isDragOver = false;
 
   onDragOver(event: DragEvent) {
@@ -37,11 +40,29 @@ export class Fileupload {
   }
 
   handleFile(file: File) {
-    if (file.type !== 'application/pdf') {
-      alert('Only PDF files are allowed!');
-      return;
-    }
-    console.log('Selected file:', file);
+    const filedata = new FormData
+    filedata.append("file",file)
 
+    this.http.post('http://localhost:8080/file-upload', filedata, {
+      observe: 'response',
+      responseType: 'blob'
+    }).subscribe({
+      next: (res) => {
+        // успешный ответ — blob
+        const blob = res.body as Blob;
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'report.txt';
+        a.click();
+      },
+      error: (err) => {
+        const blob = err.error as Blob;
+        blob.text().then(text => {
+          console.error('Ошибка от сервера:', text);
+          alert(text);
+        });
+      }
+    });
   }
 }
